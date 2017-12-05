@@ -15,14 +15,23 @@ $(document).ready(function () {
   });
 });
 
-$('.join-group').click(function() {
+$(document).on('click', '#create-user', function(){
+  var $firstName = $('#first-name')
+  var $lastName = $('#last-name')
+  var $phoneNumber = $('#phone-number')
+  var data = {
+    'user[first_name]': $firstName.val(),
+    'user[last_name]': $lastName.val(),
+    'user[phone_number]': $phoneNumber.val()
+  }
   $.ajax({
     url: 'http://json-server.devpointlabs.com/api/v1/users',
-    method: 'POST',
-    dataType: 'JSON'
-  }).done(function(great) {
-    console.log(great)
-  }).fail(function (bad) {
-      console.log(bad)
-  });
+    type: 'POST',
+    dataType: 'JSON',
+    data: data
+  }).done( function(){
+    console.log('User added!')
+  }).fail( function(){
+    alert('Failed Transmission!')
+  })
 });

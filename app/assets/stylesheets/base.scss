@@ -1,12 +1,13 @@
-h2 {
-  color: rgb(0, 0, 255);
-}
-
-h4 {
-  color: rgb(0, 0, 255);
-}
-
 body {
   background-color: rgb(189, 189, 189);
   font-family: 'Permanent Marker', cursive;
+}
+
+h1, h2, h4, form {
+  color: rgb(0, 0, 255);
+}
+
+li {
+  font-size: 20px;
+  color: rgb(0, 0, 255);
 }
